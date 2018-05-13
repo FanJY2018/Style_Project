@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>故事</title>
+    <style>
+        body{
+            font-family: Helvetica，Arial，”华文细黑”，”微软雅黑”;
+            overflow:scroll;
+            overflow-x : hidden ; height : 100% ; margin : 0 ; padding : 0 ;
+        }
+        .story_container{
+            background-image:-webkit-linear-gradient(top,rgba(255,240,245,.1) 0%,rgba(139,0,139,.3)50%,rgba(75,0,130,.3) 100%);
+            width:90%;
+            margin:0 auto;
+            margin-top:100px;
+            position:relative;
+            z-index:0;
+        }
+        /*.bg{*/
+            /*z-index:1;*/
+            /*height:4601px;*/
+            /*width:90%;*/
+            /*margin:0 auto;*/
+            /*margin-top:100px;*/
+            /*position:relative;*/
+            /*background:url(img/story/bg.jpg);*/
+            /*opacity:0.5;*/
+        /*}*/
+        .story_container>div{
+            border-bottom:1px solid #bcb148;
+            padding:0;
+            margin:0 auto;
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+        }
+        .story_container>div:last-child{
+            border-bottom:1px solid #bcb148;
+        }
+        .story_container>div:first-child{
+        }
+        .story_container>div>div:first-child img{
+            width:300px;
+            margin:30px 0;
+        }
+        .story_container>div>div:nth-child(2) h4{
+            font-size:2em;
+            font-weight:normal;
+            height:30px;
+            color: #7d7a4c;
+            width:50%;
+            text-align:center;
+            margin:15px auto;
+        }
+        .story_container>div>div:nth-child(2) p{
+            float:right;
+            line-height:40px;
+            margin:0;
+            margin-top:30px;
+            text-indent:50px;
+            color:#252525;
+            letter-spacing:2px;
+            padding-left:20px;
+        }
+        .story_container>div>div:nth-child(2){
+                 margin:0 auto;
+             }
+        /*飞入动画*/
+        @keyframes righteaseinAnimate{
+            0%{ transform: translateX(2000px); opacity: 0;}   /*在0%时设置文字在想X轴2000px位移处（右边），透明度为0，也就是看不见文字*/
+            100%{ transform: translateX(0px); opacity: 1;}      /*在100%时设置文字在想X轴0px位移处，也就是原始布局的位置，透明度为1，也就是文字可以看见了*/
+        }
+        @-webkit-keyframes righteaseinAnimate{
+            0%{ -webkit-transform: translateX(1000px); opacity: 0;}
+            100%{ -webkit-transform: translateX(0px); opacity: 1;}
+        }
+        @-o-keyframes righteaseinAnimate{
+            0%{ -webkit-transform: translateX(1000px); opacity: 0;}
+            100%{ -webkit-transform: translateX(0px); opacity: 1;}
+        }
+        @-ms-keyframes righteaseinAnimate{
+            0%{ -webkit-transform: translateX(1000px); opacity: 0;}
+            100%{ -webkit-transform: translateX(0px); opacity: 1;}
+        }
+        @-moz-keyframes righteaseinAnimate{
+            0%{ -webkit-transform: translateX(1000px); opacity: 0;}
+            100%{ -webkit-transform: translateX(0px); opacity: 1;}
+        }
+        .story_container>div>div:nth-child(2) p{
+            animation: righteaseinAnimate 1s ease 1;    /*调用已定义好的动画righteaseinAnimate，全程运行时间1S，进入的速度曲线为ease，只播放一次*/
+            -webkit-animation: righteaseinAnimate 1s ease 1;
+            -moz-animation: righteaseinAnimate 1s ease 1;
+            -ms-animation: righteaseinAnimate 1s ease 1;
+            -o-animation: righteaseinAnimate 1s ease 1;
+            /*规定动画的最后状态为结束状态*/
+            animation-fill-mode:forwards;
+            -webkit-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            -ms-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+        }
+    </style>
+    <link rel="stylesheet" href="css/box.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/slidefolio.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script>
+        function init() {
+            var stage = new createjs.Stage("demoCanvas");
+            var circle = new createjs.Shape();
+            circle.graphics.beginFill("Crimson").drawCircle(0, 0, 20);
+            circle.x = 100;
+            circle.y = 30;
+            stage.addChild(circle);
+            createjs.Tween.get(circle, {loop: true})
+                .to({x: 1800}, 2000, createjs.Ease.getPowInOut(4))
+                .to({alpha: 0, y: 75}, 500, createjs.Ease.getPowInOut(2))
+                .to({alpha: 0, y: 125}, 100)
+                .to({alpha: 1, y: 30}, 500, createjs.Ease.getPowInOut(2))
+                .to({x: 100}, 2000, createjs.Ease.getPowInOut(2));
+            createjs.Ticker.setFPS(80);
+            createjs.Ticker.addEventListener("tick", stage);
+        }
+    </script>
+</head>
+<body onload="init();">
+<header id="header"></header>
+<canvas id="demoCanvas" width="1880px" height="100" style="border:0px solid;margin:0 auto;width:100%"></canvas>
+<div class="box">
+    <div class="left"></div>
+    <div class="right"></div>
+    <div class="top"></div>
+    <div class="bottom"></div>
+</div>
+
+<section class="story_container">
+    <!--
+<div>
+    <div>
+            <img src="${url}" alt="${title}">
+    </div>
+    <div>
+             <h4>${title}</h4>
+             <p>${story}</p>
+    </div>
+</div>
+-->
+</section>
+<footer id="footer"></footer>
+
+<script src="js/ajax.js"></script>
+<script src="js/story.js"></script>
+<script src="js/header_little.js"></script>
+<script src="js/footer.js"></script>
+</body>
+</html>

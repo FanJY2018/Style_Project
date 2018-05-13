@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title></title>
+	 <meta charset="utf-8">
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	 <meta name="description" content="">
+	 <meta name="author" content="">
+  <style type="text/css">
+		.img_list_container{
+		position:relative;
+		width:900px;
+		margin:0 auto;
+		overflow:hidden;	
+				height:600px;
+		}
+		.img_list_container img{
+		float:left;
+		}
+		.img_list{
+		position:absolute;
+		z-index:1;
+		}
+		.img_list_container .arrow {
+		position:relative;	
+		z-index:2;
+		}
+		.img_list_container .arrow img:first-child{
+		width:20px;
+		height:30px;
+		left:10px;
+		top:280px;
+		position:absolute;	
+		padding:20px 10px;
+		cursor:pointer;
+		}
+		.img_list_container>.arrow img:first-child:hover{
+		background:rgba(190,190,190,0.5);
+		}
+		.img_list_container>.arrow img:last-child:hover{
+		background:rgba(190,190,190,0.5);
+		}
+		.img_list_container .arrow img:last-child{
+		cursor:pointer;
+		width:20px;
+		height:30px;
+		position:absolute;	
+		right:10px;
+		top:280px;
+		padding:20px 10px;
+		}
+  </style>
+	 <link rel="stylesheet" href="css/box.css">
+	 <!-- Bootstrap core CSS -->
+	 <link href="css/bootstrap.css" rel="stylesheet">
+	 <!-- Add custom CSS here -->
+	 <link href="css/slidefolio.css" rel="stylesheet">
+	 <!-- Font Awesome -->
+	 <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+</head>
+ <body>
+<header id="header"></header>
+
+<div class="img_list_container">
+		<div class="img_list" style="left:-900px">
+			<img src="img/images/arches_national_park/2.jpg"alt="" />
+			<img src="img/images/arches_national_park/3.jpg"alt="" />
+			<img src="img/images/arches_national_park/4.jpg"alt="" />
+			</div>
+		<div id="" class="arrow">
+			<img src="img/images/arrow-left.png" />
+			<img src="img/images/arrow-right.png" />
+		</div>
+</div>
+<footer id="footer"></footer>
+<script type="text/javascript">
+	window.onload = function(){
+		var img = document.querySelector(".img_list img:first-child");
+		var list = document.querySelector(".img_list");
+		var imgs = document.querySelectorAll(".img_list>img");
+		var left = document.querySelector(".arrow > img:first-child");
+		//console.log(left);
+		var right = document.querySelector(".arrow > img:last-child");
+		var sumWidth = 0;
+		for(let i =0; i<imgs.length; i++){
+					var width =		imgs[i].width;
+					var height =		imgs[i].height;
+					sumWidth +=	imgs[i].width;
+					list.style.height = height;
+		}
+		list.style.width = sumWidth+"px";
+		//	var imgs = document.querySelector(".img_list");
+		//	var width = img.width;
+			function animate(off){
+					//	console.log(width);
+							var newList = parseInt(list.style.left) + off;
+							list.style.left = newList + "px";
+						if(newList < -width * (imgs.length-1)){
+							list.style.left = -0 + "px";
+						}
+						if(newList > 0){
+							list.style.left =  -width * (imgs.length-1) + "px";
+						}
+			}
+			left.onclick = function(){
+				animate(width);
+			}
+			right.onclick = function(){
+				animate(-width);
+			}
+			}
+	
+</script>
+</body>
+<script src="js/ajax.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+</html>

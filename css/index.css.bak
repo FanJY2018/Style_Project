@@ -1,0 +1,75 @@
+		body{
+			margin:0;
+			padding:0;
+		}
+
+		.top,.left,.bottom,.right{
+			position:fixed;
+			background:rgba(211,211,211,1);
+			background:#ccc;
+			z-index:15;
+		}
+		.top{
+			top:0;
+			left:0;
+			width:100%;
+			height:30px;
+			background-image:url(../img/index/bg1.png);
+			background-position:center;
+			background-size:contain;
+			background-repeat:repeat;
+		}
+		.left{
+			top:0;
+			left:0;
+			width:30px;
+			height:100%;
+		}
+		.right{
+			top:0;
+			right:0;
+			width:30px;
+			height:100%;
+			
+		}
+		.bottom{
+			bottom:0;
+			left:0;
+			width:100%;
+			height:30px;
+			background-image:url(../img/index/bg1.png);
+			background-position:center;
+			background-size:contain;
+			background-repeat:repeat;
+		}
+			section{
+		width:80%;
+		margin:40px auto;
+	}
+	.section1{
+        -moz-column-count:5; /* Firefox */
+        -webkit-column-count:5; /* Safari 和 Chrome */
+        column-count:5;
+        -moz-column-gap: .5em;
+		 -webkit-column-gap: .5em;
+		column-gap: .5em;
+	}
+	.section1  div img{
+		text-align:center;
+		transition:all .5s linear;
+		width:100%;
+		height:100%;
+	}
+	.section1  div{
+		-moz-page-break-inside: avoid;
+		-webkit-column-break-inside: avoid;
+		break-inside: avoid;
+		margin: 0 0 .5em 0;
+		overflow: hidden;
+		transition:all 1.5s linear;
+
+	}
+	.section1  div:hover img{
+		transform:scale(1.2);
+
+	}

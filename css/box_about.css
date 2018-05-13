@@ -1,0 +1,44 @@
+.top,.left1,.bottom,.right1{
+    position:fixed;
+    background:rgba(211,211,211,1);
+    background:#ccc;
+    z-index:15;
+}
+.top{
+    top:0;
+    left:0;
+    width:100%;
+    height:30px;
+    background-image:url(../img/index/bg1.png);
+    background-position:center;
+    background-size:contain;
+    background-repeat:repeat;
+}
+.left1{
+    top:0;
+    left:0;
+    width:30px;
+    height:100%;
+}
+.right1{
+    top:0;
+    right:0;
+    width:30px;
+    height:100%;
+
+}
+.bottom{
+    bottom:0;
+    left:0;
+    width:100%;
+    height:30px;
+    background-image:url(../img/index/bg1.png);
+    background-position:center;
+    background-size:contain;
+    background-repeat:repeat;
+}
+@media screen and (max-width: 768px){
+    .bottom,.top,.left,.right{
+        display:none;
+    }
+}

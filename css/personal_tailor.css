@@ -1,0 +1,70 @@
+div{
+    border:0px solid !important;
+}
+.con_text{
+    background: rgba(159, 189, 211,.2);
+    text-align:center;
+    margin-bottom:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    box-shadow:1px 1px 1px 1px gray;
+}
+.head_img{
+    background:url(https://www.berndkammerer.com/wp-content/uploads/2018/01/shop-room-overview.jpg) no-repeat scroll center center;
+    background-size:cover;
+    height:800px;
+    margin-top:-61px;
+}
+.con_text{
+    background: rgba(159, 189, 211,.2);
+    text-align:center;
+    margin-bottom:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+    box-shadow:1px 1px 1px 1px gray;
+}
+.per_title{
+    margin-bottom:20px;
+    font-size:30px;
+}
+.per_price{
+    color:#f0ad4e;
+}
+.per_con_1{
+    margin-left:20px;
+    font-size:15px;
+    margin-top:30px;
+}
+.per_num{
+    text-align: center;
+    margin:50px 30px 0px 20px;
+    background:#e7e7e7;
+    outline:none;
+    border:1px solid rgba(0, 0, 0, 0.16);
+    width:30px;
+    background: rgba(130, 112, 131, 0.45);
+    height:30px;
+}
+.cart{
+    border-radius:0px !important;
+}
+.qita{
+    margin-top:300px;
+    display:none;
+}
+.btn_back{
+    margin-left:20px;
+}
+.hr{
+    border-width: 5px;
+}
+img{
+    cursor: pointer;
+}
+.head_text{
+    position: relative;
+    color:#00BCD4;
+    left:30%;
+    top:35%;
+    font-size:70px;
+}

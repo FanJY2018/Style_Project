@@ -1,0 +1,20 @@
+<?php
+require_once("../init.php");
+$sql="select * from img_index";
+$result = mysqli_query($conn,$sql);
+$row=mysqli_fetch_all($result,1);
+$output["imgIndex"]=$row;
+echo json_encode($output);
+
+
+$i=0;
+for(;$i<26;$i++){
+	if($i<=10 && $i>0 || $i>22 && $i<=25){
+	$sql = "SELECT * FROM img_index where pid='$i'";
+	$result = mysqli_query($conn,$sql);
+	$row = mysqli_fetch_all($result,1);
+	$output2["landscape"] = $row;
+	echo json_encode($output2);
+	}
+}
+?>
